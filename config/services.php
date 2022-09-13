@@ -36,6 +36,7 @@ return [
         'apiSecret' => env('API_SECRET'),
         'applicationSid' => env('TWILIO_APPLICATION_SID'),
         'number' => env('TWILIO_NUMBER'),
+        'token' => env('TWILIO_AUTH_TOKEN'),
     ],
 
 ];

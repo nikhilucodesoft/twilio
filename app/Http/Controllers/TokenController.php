@@ -26,7 +26,6 @@ class TokenController extends Controller
         $applicationSid = config('services.twilio')['applicationSid'];
         $apiKey = config('services.twilio')['apiKey'];
         $apiSecret = config('services.twilio')['apiSecret'];
-
         if ($forPage === route('dashboard', [], false)) {
             $this->accessToken->setIdentity('support_agent');
         } else {
