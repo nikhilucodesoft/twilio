@@ -40,7 +40,7 @@ Route::post(
     ['uses' => 'CallController@newCall', 'as' => 'new-call']
 );
 
-
+// ----------------IVR Calling----------------------------------------------------------//
 Route::group(
     ['prefix' => 'ivr'],
     function () {
@@ -168,6 +168,9 @@ Route::group(
         );
     }
 );
+
+//------------------------SMS Functionality----------------------------------------------// 
+
 Route::group(
     ['prefix' => 'sms'],
     function () {

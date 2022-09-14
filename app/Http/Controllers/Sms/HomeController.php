@@ -62,12 +62,12 @@ class HomeController extends Controller
      * @param String $message Body of sms
      * @param Number $recipients Number of recepientv
      */
-    private function sendMessage($message, $recipients)
+    private function sendMessage($message, $recipient)
     {
         $account_sid = config('services.twilio')['accountSid'];
         $auth_token =config('services.twilio')['token'];
         $twilio_number =config('services.twilio')['number'];
         $client = new Client($account_sid, $auth_token);
-        $client->messages->create($recipients, array('from' => $twilio_number, 'body' => $message));
+        $client->messages->create($recipient, array('from' => $twilio_number, 'body' => $message));
     }
 }

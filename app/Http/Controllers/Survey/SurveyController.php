@@ -10,6 +10,8 @@ use App\Models\Survey\Survey;
 use App\Models\Survey\QuestionResponse;
 
 use Twilio\TwiML\VoiceResponse;
+use Twilio\TwiML\MessagingResponse;
+
 
 
 class SurveyController extends Controller
@@ -74,7 +76,7 @@ class SurveyController extends Controller
     public function showSms($id)
     {
         $surveyToTake = Survey::find($id);
-        $voiceResponse = new VoiceResponse();
+        $voiceResponse = new MessagingResponse();
 
         if (is_null($surveyToTake)) {
             return $this->_responseWithXmlType($this->_noSuchSmsSurvey($voiceResponse));
@@ -95,7 +97,7 @@ class SurveyController extends Controller
 
     private function _getNextSmsStepFromCookies($request)
     {
-        $response = new VoiceResponse();
+        $response = new MessagingResponse();
         if (strtolower(trim($request->input('Body'))) === self::START_SMS_SURVEY_COMMAND) {
             $messageSid = $request->input('MessageSid');
 
