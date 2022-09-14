@@ -1,5 +1,5 @@
 @extends('layouts.master')
-
+@section('title','SMS')
 @section('content')
     <div class="container">
         <div class="jumbotron">

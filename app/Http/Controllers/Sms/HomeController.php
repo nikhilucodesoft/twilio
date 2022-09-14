@@ -35,8 +35,8 @@ class HomeController extends Controller
         ]);
 
         $user_phone_number_model = new UsersPhoneNumber($request->all());
-        $user_phone_number_model->save();
         $this->sendMessage('User registration successfull!!', $request->phone_number);
+        $user_phone_number_model->save();
         return back()->with(['success' => "{$request->phone_number} registered"]);
     }
 
