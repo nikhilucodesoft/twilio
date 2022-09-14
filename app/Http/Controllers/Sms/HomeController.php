@@ -60,7 +60,7 @@ class HomeController extends Controller
     /**
      * Sends sms to user using Twilio's programmable sms client
      * @param String $message Body of sms
-     * @param Number $recipients Number of recepient
+     * @param Number $recipients Number of recepientv
      */
     private function sendMessage($message, $recipients)
     {
