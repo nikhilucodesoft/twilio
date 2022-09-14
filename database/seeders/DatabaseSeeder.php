@@ -1,21 +1,19 @@
 <?php
-
+namespace Database\Seeders;
 use Illuminate\Database\Seeder;
-use Illuminate\Database\Eloquent\Model;
+
 
 class DatabaseSeeder extends Seeder
 {
     /**
-     * Run the database seeds.
+     * Run all the database seeders
      *
      * @return void
      */
     public function run()
     {
-        Model::unguard();
-
+        $this->call(AgentSeeder::class);
         $this->call(TicketSeeder::class);
-
-        Model::reguard();
+        $this->command->info('Agents seeded');
     }
 }
